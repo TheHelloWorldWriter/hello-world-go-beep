@@ -80,9 +80,9 @@ func playRandomBeep() {
 	b := beepTypes[rand.Intn(len(beepTypes))]
 	ret, _, err := messageBeep.Call(uintptr(b.Value))
 	if ret != 0 {
-		fmt.Printf("Played beep: %s\n", b.Name)
+		fmt.Printf("Playing beep: %s\n", b.Name)
 	} else {
-		fmt.Printf("Failed to play beep: %s, error: %v\n", b.Name, err)
+		fmt.Printf("%sFailed to play %s beep, error: %v%s\n", YellowAnsi, b.Name, err, ResetAnsi)
 	}
 }
 
@@ -90,7 +90,7 @@ func main() {
 	// Print the program title, description, and usage instructions with ANSI color codes
 	fmt.Println(CyanAnsi + "hello-world-go-beep" + ResetAnsi)
 	fmt.Printf("%sA Hello, World! program in Go that plays random system beep sounds.%s\n\n", GrayAnsi, ResetAnsi)
-	fmt.Printf("%sUsage:%s hello-world-go-beep [number_of_beeps_to_play]\n\n", GrayAnsi, ResetAnsi)
+	fmt.Printf("%sUsage:%s hello-world-go-beep [number-of-beeps-to-play]\n\n", GrayAnsi, ResetAnsi)
 
 	// Get the number of beeps to play from the (single) command line argument
 	flag.Parse()
