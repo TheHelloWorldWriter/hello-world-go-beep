@@ -1,5 +1,23 @@
 //go:build windows
 
+/*
+hello-world-go-beep plays a sequence of randomly chosen system beep sounds.
+
+The sounds are played using the Windows API MessageBeep function, which allows for different types
+of system sounds to be played.
+
+Usage:
+
+	hello-world-go-beep [number_of_beeps_to_play]
+
+If no valid count is provided, a random number of beeps between 1 and 100 will be played.
+
+This is the first program I wrote in Go, created while learning, experimenting, and trying out the
+language for the first time.
+
+Copyright (c) 2025 The Hello World Writer https://www.thehelloworldwriter.com. All rights reserved.
+Licensed under the MIT License. See LICENSE file in the project root for full license information.
+*/
 package main
 
 import (
